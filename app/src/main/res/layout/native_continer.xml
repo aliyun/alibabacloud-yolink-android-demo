@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.noah.api.MediaView
+                android:layout_centerInParent="true"
+                android:id="@id/native_ad_media_view"
+                android:layout_width="300dp"
+                android:layout_height="200dp"/>
+
+        <com.noah.api.AdIconView
+                android:layout_alignParentTop="true"
+                android:id="@id/native_ad_icon"
+                android:layout_width="30dp"
+                android:layout_height="20dp"/>
+
+
+</RelativeLayout>

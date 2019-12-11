@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.yolink.demo.NativeAdActivity">
+
+    <TextView
+            android:id="@+id/nativead_tips"
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/nativead_preload"
+            tools:layout_editor_absoluteX="0dp" />
+
+    <LinearLayout
+            android:id="@+id/nativead_container"
+            android:layout_width="match_parent"
+            android:layout_height="462dp"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/nativead_tips"
+            tools:layout_editor_absoluteX="2dp">
+
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/nativead_preload"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="PreloadAd"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+            android:id="@+id/nativead_show"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginTop="20dp"
+            android:text="ShowAd"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/nativead_preload"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.noah.demo.com.yolink.demo.MenuActivity">
+
+    <Button
+            android:id="@+id/bidding_native"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Native"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/bidding_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Banner"
+            app:layout_constraintTop_toBottomOf="@+id/bidding_native"
+            tools:layout_editor_absoluteX="0dp"
+            android:textAllCaps="false"/>
+
+    <Button
+            android:id="@+id/bidding_inter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Interstitial"
+            app:layout_constraintTop_toBottomOf="@+id/bidding_banner"
+            tools:layout_editor_absoluteX="0dp"
+            android:textAllCaps="false"/>
+
+    <Button
+            android:id="@+id/bidding_reward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="RewardedVideo"
+            app:layout_constraintTop_toBottomOf="@+id/bidding_inter"
+            tools:layout_editor_absoluteX="0dp"
+            android:textAllCaps="false"/>
+
+    <LinearLayout
+            android:id="@+id/bidding_container"
+            android:layout_width="match_parent"
+            android:layout_height="367dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bidding_reward"
+            app:layout_constraintVertical_bias="0.0"></LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

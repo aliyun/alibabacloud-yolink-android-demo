@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.yolink.demo"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://dl.bintray.com/ironsource-mobile/android-sdk"
+    }
+    maven {
+        url  "https://adcolony.bintray.com/AdColony"
+    }
+    flatDir {
+        dirs 'libs' //this way we can find the .aar file in libs folder
+    }
+}
+
+dependencies {
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //广告公共依赖，获取gaid需要
+    implementation ('com.google.android.gms:play-services-basement:17.1.1')
+    implementation ('com.google.android.gms:play-services-ads-identifier:17.0.0')
+
+    //facebook:
+    implementation ("com.facebook.android:audience-network-sdk:5.6.0")
+    implementation (name: 'bidding-kit-5.0.1', ext:'aar')
+
+    //ucads:
+    implementation (name: 'noah-release', ext:'aar')
+    implementation ('com.github.bumptech.glide:glide:4.10.0')
+
+    //adcolony:
+    implementation ('com.adcolony:sdk:4.1.0')
+
+    //applovin:
+    implementation ('com.applovin:applovin-sdk:9.10.3')
+
+    //admob:
+    implementation ('com.google.android.gms:play-services-ads:18.3.0')
+
+    //ironsource:
+    implementation ('com.ironsource.sdk:mediationsdk:6.10.1@jar')
+
+    //startapp:
+    implementation ("com.startapp:inapp-sdk:4.2.5")
+
+    //tapjoy:
+    implementation ('com.tapjoy:tapjoy-android-sdk:12.3.1@aar')
+
+    //vungle:
+    implementation ('com.vungle:publisher-sdk-android:6.4.11')
+}
