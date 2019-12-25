@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.facebook.ads.AdSettings;
 import com.noah.api.NoahSdk;
-import com.noah.api.NoahSdkConfig;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private static final String APP_KEY = "APP_KEY100";
+    private static final String APP_KEY = "JJBfwzew";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,17 +20,12 @@ public class MenuActivity extends AppCompatActivity {
 
         initYolinkSdk();
 
+        AdSettings.setDebugBuild(true);
+
         findViewById(R.id.bidding_native).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 startActivity(new Intent(MenuActivity.this, NativeAdActivity.class));
-            }
-        });
-
-        findViewById(R.id.bidding_banner).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                startActivity(new Intent(MenuActivity.this, BannerAdActivity.class));
             }
         });
 
@@ -47,11 +42,36 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(new Intent(MenuActivity.this, RewardedVideoAdActivity.class));
             }
         });
+
+        findViewById(R.id.bidding_banner1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Intent intent = new Intent(MenuActivity.this, BannerAdActivity.class);
+                intent.putExtra("banner_type", 1);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.bidding_banner2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Intent intent = new Intent(MenuActivity.this, BannerAdActivity.class);
+                intent.putExtra("banner_type", 2);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.bidding_banner3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Intent intent = new Intent(MenuActivity.this, BannerAdActivity.class);
+                intent.putExtra("banner_type", 3);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initYolinkSdk() {
-        NoahSdkConfig.Builder builder = new NoahSdkConfig.Builder();
-        builder.setAppKey(APP_KEY);
-        NoahSdk.init(this.getApplication(), builder.build(), null);
+        NoahSdk.init(this.getApplication(),APP_KEY);
     }
 }

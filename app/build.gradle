@@ -51,7 +51,7 @@ dependencies {
     implementation (name: 'bidding-kit-5.0.1', ext:'aar')
 
     //ucads:
-    implementation (name: 'noah-release', ext:'aar')
+    implementation ('com.yolinkmob:sdk:1.0.1')
     implementation ('com.github.bumptech.glide:glide:4.10.0')
 
     //adcolony:

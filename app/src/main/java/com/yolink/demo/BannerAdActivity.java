@@ -1,8 +1,10 @@
 package com.yolink.demo;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,10 @@ import com.noah.api.IAdPreloadListener;
 
 public class BannerAdActivity extends AppCompatActivity {
 
-    private static final String SLOT = "bidding_banner";
+    private static final String SLOT_300x250 = "rKwOCtRU";
+    private static final String SLOT_320x100 = "aaG0Mbqc";
+    private static final String SLOT_320x50 = "GX0y8pag";
+    private String mSlot = SLOT_300x250;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +25,25 @@ public class BannerAdActivity extends AppCompatActivity {
         setContentView(R.layout.activity_banner_ad);
         setTitle("BannerAd");
 
+        int bannerType = getIntent().getIntExtra("banner_type", 1);
+        switch (bannerType) {
+            case 1:
+                mSlot = SLOT_300x250;
+                break;
+            case 2:
+                mSlot = SLOT_320x100;
+                break;
+            case 3:
+                mSlot = SLOT_320x50;
+                break;
+        }
+
         final TextView tipsView = findViewById(R.id.bannerad_tips);
         findViewById(R.id.bannerad_preload).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 tipsView.setText("preloading......");
-                BannerAd.preloadAd(BannerAdActivity.this, SLOT, new IAdPreloadListener() {
+                BannerAd.preloadAd(BannerAdActivity.this, mSlot, new IAdPreloadListener() {
                     @Override
                     public void onAdLoaded() {
                         tipsView.setText("preload success.");
@@ -44,7 +62,7 @@ public class BannerAdActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 tipsView.setText("loading......");
-                BannerAd.getAd(BannerAdActivity.this, SLOT, new BannerAd.AdListener() {
+                BannerAd.getAd(BannerAdActivity.this, mSlot, new BannerAd.AdListener() {
                     @Override
                     public void onAdError(final AdError adError) {
                         tipsView.setText("load error, error code:" + adError.getErrorCode() + " error message: " + adError.getErrorMessage());
@@ -55,7 +73,9 @@ public class BannerAdActivity extends AppCompatActivity {
                         tipsView.setText("load success.");
                         LinearLayout container = findViewById(R.id.bannerad_container);
                         container.removeAllViews();
-                        container.addView(ad.getView(), new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        lp.gravity = Gravity.CENTER_HORIZONTAL;
+                        container.addView(ad.getView(), lp);
                     }
 
                     @Override
