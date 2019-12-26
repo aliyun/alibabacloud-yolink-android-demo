@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="#ff2e2e2e"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+        <com.noah.api.AdIconView
+                android:id="@id/native_ad_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical" />
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@id/native_ad_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="Ad titles"
+                        android:textColor="#fffcfcfc"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/native_ad_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="This is ad content"
+                        android:textColor="#fffcfcfc"
+                        android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <ImageView
+                    android:id="@+id/icon_close"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="right|bottom"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_close" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+    <com.noah.api.MediaView
+            android:id="@id/native_ad_media_view"
+            android:layout_width="300dp"
+            android:layout_height="225dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp" />
+
+
+    <Button
+            android:id="@id/native_ad_call_to_action"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/selector_btn_common"
+            android:padding="2dp"
+            android:text="Install"
+            android:textColor="#ffffffff"
+            android:textSize="14dp" />
+
+
+</LinearLayout>

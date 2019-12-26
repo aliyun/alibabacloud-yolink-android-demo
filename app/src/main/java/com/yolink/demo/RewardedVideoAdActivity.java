@@ -11,7 +11,7 @@ import com.noah.api.RewardedVideoAd;
 
 public class RewardedVideoAdActivity extends AppCompatActivity {
 
-    private static final String SLOT = "bidding_reward";
+    private static final String SLOT = "pmsdxV2V";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

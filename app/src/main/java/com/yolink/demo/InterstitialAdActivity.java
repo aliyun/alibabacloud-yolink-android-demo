@@ -11,7 +11,7 @@ import com.noah.api.InterstitialAd;
 
 public class InterstitialAdActivity extends AppCompatActivity {
 
-    private static final String SLOT = "bidding_interstitial";
+    private static final String SLOT = "6AOsSLFE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

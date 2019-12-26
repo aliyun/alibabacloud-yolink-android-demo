@@ -3,8 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.yolink.demo.NativeAdActivity">
+        android:layout_height="match_parent">
 
     <TextView
             android:id="@+id/nativead_tips"
@@ -19,12 +18,12 @@
     <LinearLayout
             android:id="@+id/nativead_container"
             android:layout_width="match_parent"
-            android:layout_height="462dp"
-            android:layout_marginTop="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/nativead_tips"
-            tools:layout_editor_absoluteX="2dp">
+            tools:layout_editor_absoluteX="0dp">
 
     </LinearLayout>
 
