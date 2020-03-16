@@ -43,6 +43,11 @@ public class RewardedVideoAdActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 tipsView.setText("loading......");
+                if (RewardedVideoAd.isReady(SLOT)) {
+                    tipsView.setText("get ad from cache..."); //获取缓存池中的广告
+                } else {
+                    tipsView.setText("get ad from adn..."); //实时请求adn获取广告
+                }
                 RewardedVideoAd.getAd(RewardedVideoAdActivity.this, SLOT, new RewardedVideoAd.AdListener() {
                     @Override
                     public void onAdError(final AdError adError) {
@@ -56,7 +61,7 @@ public class RewardedVideoAdActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdShowed(final RewardedVideoAd ad) {
+                    public void onAdShown(final RewardedVideoAd ad) {
                         tipsView.setText("show success.");
                     }
 
