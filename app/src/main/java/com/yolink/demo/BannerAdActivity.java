@@ -62,6 +62,12 @@ public class BannerAdActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 tipsView.setText("loading......");
+                if (BannerAd.isReady(mSlot)) {
+                    tipsView.setText("get ad from cache..."); //获取缓存池中的广告
+                } else {
+                    tipsView.setText("get ad from adn..."); //实时请求adn获取广告
+                }
+
                 BannerAd.getAd(BannerAdActivity.this, mSlot, new BannerAd.AdListener() {
                     @Override
                     public void onAdError(final AdError adError) {
@@ -79,7 +85,7 @@ public class BannerAdActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdShowed(final BannerAd ad) {
+                    public void onAdShown(final BannerAd ad) {
                         tipsView.setText("show success.");
                     }
 

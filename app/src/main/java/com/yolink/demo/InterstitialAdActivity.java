@@ -43,6 +43,12 @@ public class InterstitialAdActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 tipsView.setText("loading......");
+                if (InterstitialAd.isReady(SLOT)) {
+                    tipsView.setText("get ad from cache..."); //获取缓存池中的广告
+                } else {
+                    tipsView.setText("get ad from adn..."); //实时请求adn获取广告
+                }
+
                 InterstitialAd.getAd(InterstitialAdActivity.this, SLOT, new InterstitialAd.AdListener() {
                     @Override
                     public void onAdError(final AdError adError) {

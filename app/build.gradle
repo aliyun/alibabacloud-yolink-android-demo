@@ -47,31 +47,34 @@ dependencies {
     implementation ('com.google.android.gms:play-services-ads-identifier:17.0.0')
 
     //facebook:
-    implementation ("com.facebook.android:audience-network-sdk:5.6.0")
-    implementation (name: 'bidding-kit-5.0.1', ext:'aar')
+    implementation ("com.facebook.android:audience-network-sdk:5.7.1")
+    implementation (name: 'bidding-kit-release-2.0', ext:'aar')
 
     //ucads:
-    implementation ('com.yolinkmob:sdk:1.0.1')
-    implementation ('com.github.bumptech.glide:glide:4.10.0')
+    implementation ('com.yolinkmob:sdk:1.5.1')
+    //implementation (name: 'noah-release', ext:'aar')
 
     //adcolony:
-    implementation ('com.adcolony:sdk:4.1.0')
+    implementation ('com.adcolony:sdk:4.1.4')
 
     //applovin:
-    implementation ('com.applovin:applovin-sdk:9.10.3')
+    implementation ('com.applovin:applovin-sdk:9.11.6')
 
     //admob:
-    implementation ('com.google.android.gms:play-services-ads:18.3.0')
+    implementation ('com.google.android.gms:play-services-ads:19.0.0')
 
     //ironsource:
-    implementation ('com.ironsource.sdk:mediationsdk:6.10.1@jar')
+    implementation ('com.ironsource.sdk:mediationsdk:6.15.0.1@jar')
 
     //startapp:
-    implementation ("com.startapp:inapp-sdk:4.2.5")
+    implementation ("com.startapp:inapp-sdk:4.4.1")
 
     //tapjoy:
-    implementation ('com.tapjoy:tapjoy-android-sdk:12.3.1@aar')
+    implementation ('com.tapjoy:tapjoy-android-sdk:12.4.2@aar')
 
     //vungle:
-    implementation ('com.vungle:publisher-sdk-android:6.4.11')
+    implementation ('com.vungle:publisher-sdk-android:6.5.2')
+
+    //unity
+    implementation(name: 'unity-ads-3.4.2', ext:'aar')
 }

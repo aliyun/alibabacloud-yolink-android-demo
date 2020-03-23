@@ -53,6 +53,11 @@ public class NativeAdActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 tipsView.setText("loading......");
+                if (NativeAd.isReady(SLOT)) {
+                    tipsView.setText("get ad from cache..."); //获取缓存池中的广告
+                } else {
+                    tipsView.setText("get ad from adn..."); //实时请求adn获取广告
+                }
                 NativeAd.getAd(NativeAdActivity.this, SLOT, new NativeAd.AdListener() {
                     @Override
                     public void onAdError(final AdError adError) {
@@ -115,7 +120,7 @@ public class NativeAdActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdShowed(final NativeAd ad) {
+                    public void onAdShown(final NativeAd ad) {
                         tipsView.setText("show success.");
                     }
 
